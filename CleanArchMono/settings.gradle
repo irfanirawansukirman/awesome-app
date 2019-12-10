@@ -1,0 +1,2 @@
+include ':app', ':domain', ':data', ':lib_lastadapter', ':lib_recyclerviewgenericadapter', ':lib_loopingviewpager', ':lib_pageindicatorview'
+rootProject.name='Clean Arch Mono'
