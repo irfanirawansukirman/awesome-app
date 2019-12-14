@@ -11,6 +11,7 @@ import com.irfanirawansukirman.domain.repository.MoviesRepository
 class MoviesRepositoryImpl(private val moviesApi: MovieApi) :
     BaseRepository<MovieInfo, MoviesResponse>(),
     MoviesRepository {
+
     override suspend fun getMovies(apiKey: String, sortBy: String): Result<MovieInfo> {
         return fetchData(dataProvider = { moviesApi.getMovies(apiKey, sortBy).getData() })
     }

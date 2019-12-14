@@ -71,12 +71,6 @@ fun convertDateToNewFormat(date: String, format: String): String {
     return SimpleDateFormat(format, Locale("id", "ID")).format(calendar.time)
 }
 
-inline fun <reified T> List<*>.asListOfType(): List<T>? =
-    if (all { it is T })
-        @Suppress("UNCHECKED_CAST")
-        this as List<T> else
-        null
-
 fun isEmailValid(email: String): Boolean {
     val emailPattern = Pattern.compile(
         "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
@@ -92,6 +86,12 @@ fun isPhoneValid(phone: String): Boolean {
 
     return phonePattern.matcher(phone).matches()
 }
+
+inline fun <reified T> List<*>.asListOfType(): List<T>? =
+    if (all { it is T })
+        @Suppress("UNCHECKED_CAST")
+        this as List<T> else
+        null
 
 inline fun <reified T : AppCompatActivity> navigator(context: Context) {
     val intent = Intent(context, T::class.java)

@@ -2,12 +2,14 @@ package com.irfanirawansukirman.data.di
 
 import com.irfanirawansukirman.data.BuildConfig
 import com.irfanirawansukirman.data.network.services.MovieApi
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
+import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
@@ -34,8 +36,7 @@ inline fun <reified T> createApiService(okHttpClient: OkHttpClient, url: String)
     val retrofit = Retrofit.Builder()
         .baseUrl(url)
         .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create()) // converter using gson
-        //.addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))n// converter using kotlin serial
+        .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
         .build()
     return retrofit.create(T::class.java)
 }

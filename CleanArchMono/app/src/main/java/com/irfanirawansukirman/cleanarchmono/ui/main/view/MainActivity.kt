@@ -19,9 +19,7 @@ class MainActivity : BaseActivity(), OnRecyclerItemClickListener {
     override fun bindLayoutId() = R.layout.main_activity
 
     override fun setupViewListener() {
-        btnMain.onClick {
-            viewModel.getMovieList()
-        }
+
     }
 
     override fun onLoadObserver() {
@@ -77,7 +75,7 @@ class MainActivity : BaseActivity(), OnRecyclerItemClickListener {
 
     private fun setupMovieList(data: List<MoviesResult>) {
         recyclerMain.apply {
-            verticalList(isDividerVisible = true)
+            gridList()
             adapter = mainAdapter
         }
 

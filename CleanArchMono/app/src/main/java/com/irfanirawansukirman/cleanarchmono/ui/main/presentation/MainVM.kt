@@ -12,7 +12,11 @@ import com.irfanirawansukirman.domain.model.response.MovieInfo
 
 class MainVM(private val moviesUseCase: MoviesUseCase) : BaseVM<MovieInfo, MainViewEffects>() {
 
-    fun getMovieList() = executeUseCase({
+    init {
+        getMovieList()
+    }
+
+    private fun getMovieList() = executeUseCase({
         moviesUseCase("")
             .onSuccess { _uiState.value = Success(it) }
             .onFailure { _uiState.value = Error(it.throwable) }
