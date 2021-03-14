@@ -1,0 +1,7 @@
+include ':feature:profile'
+include ':feature:movie'
+include ':network'
+include ':cache'
+include ':core'
+include ':app'
+rootProject.name = "Kita Movie"

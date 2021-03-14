@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFBB86FC</color>
+    <color name="colorPrimaryDark">#FF6200EE</color>
+    <color name="colorAccent">#FF018786</color>
+
+    <color name="uiGrayMedium">#EDEDED</color>
+    <color name="uiGrayDark">#AAAAAA</color>
+
+    <color name="uiBlack">#000000</color>
+
+    <color name="uiWhite">#FFFFFF</color>
+
+    <color name="uiRed">#FF1100</color>
+
+    <color name="uiOrange">#FFC107</color>
+</resources>
