@@ -37,7 +37,6 @@ class MoviesFavoriteVMTest : BaseTest() {
             ""
         )
     )
-
     private val expectedMovies = listOf(
         MoviesUI(
             0,

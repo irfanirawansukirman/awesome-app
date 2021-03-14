@@ -91,7 +91,10 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         setSupportActionBar(getToolbarViewBinding()?.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            title = null
+        }
     }
 
     private fun initViewListener() {
@@ -137,7 +140,7 @@ class MovieDetailActivity : AppCompatActivity() {
                 hideProgress()
 
                 movieUI = state.output.movie
-                getToolbarViewBinding()?.toolbar?.title = movieUI?.title
+                supportActionBar?.title = movieUI?.title
                 viewBinding?.apply {
                     ivPoster.loadImageUrl("${BuildConfig.MOVIE_POSTER_BASE_URL}${movieUI?.poster}")
                     tvTitle.text = movieUI?.title

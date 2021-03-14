@@ -12,6 +12,7 @@ import com.irfanirawansukirman.core.util.extension.hideProgress
 import com.irfanirawansukirman.core.util.extension.showProgress
 import com.irfanirawansukirman.core.util.extension.subscribe
 import com.irfanirawansukirman.core.util.viewmodel.ViewModelFactory
+import com.irfanirawansukirman.movie.R
 import com.irfanirawansukirman.movie.data.mapper.MoviesUI
 import com.irfanirawansukirman.movie.databinding.MoviesFavoriteActivityBinding
 import com.irfanirawansukirman.movie.databinding.MoviesItemBinding
@@ -81,7 +82,10 @@ class MoviesFavoriteActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         setSupportActionBar(getToolbarViewBinding()?.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            title = getString(R.string.title_favorite_movie)
+        }
     }
 
     private fun getToolbarViewBinding() = viewBinding?.root?.let { ToolbarDefaultBinding.bind(it) }

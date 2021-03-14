@@ -86,6 +86,7 @@ class MovieDetailVMTest : BaseTest() {
             0,
             0
         )
+
         coEvery { movieUseCaseImpl.getMovie(param) } returns movieResponse
         coEvery { movieUseCaseImpl.getReviews(param) } returns reviewsResponse
 
@@ -110,6 +111,7 @@ class MovieDetailVMTest : BaseTest() {
             )
         )
         val expectedMovie = MovieWrapper(movieUI, reviewsUI.toMutableList())
+
         verifyOrder {
             movieObserver.onChanged(UIState.Loading(true))
             movieObserver.onChanged(UIState.Success(expectedMovie))
