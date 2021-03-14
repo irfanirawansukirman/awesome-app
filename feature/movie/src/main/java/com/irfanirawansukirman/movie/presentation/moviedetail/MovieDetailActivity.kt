@@ -1,7 +1,6 @@
 package com.irfanirawansukirman.movie.presentation.moviedetail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
@@ -182,7 +181,6 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun initFavorite(movieEntity: MovieEntity) {
         isFavorite = !(movieEntity.favorite == null || movieEntity.favorite == "f")
 
-        Log.d("Irfan fav ", isFavorite.toString())
         viewBinding?.ivFavorite?.apply {
             setImageDrawable(
                 getResDrawable(

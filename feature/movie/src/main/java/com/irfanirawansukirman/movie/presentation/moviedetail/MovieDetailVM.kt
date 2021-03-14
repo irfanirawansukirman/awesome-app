@@ -57,7 +57,6 @@ class MovieDetailVM @Inject constructor(
                 movieUseCaseImpl.insertMovie(movieEntity)
                 _insertMovie.value = UIState.Success(1)
             } catch (e: Exception) {
-                Log.e("Irfan insert movie", e.message.orDefault("error"))
                 _insertMovie.value = UIState.Failure(e)
             }
             _insertMovie.value = UIState.Loading(false)
@@ -70,7 +69,7 @@ class MovieDetailVM @Inject constructor(
                 val data = movieUseCaseImpl.getMovieById(movieId) ?: MovieEntity(0, "", "", "", "", "f")
                 _movieById.value = data
             } catch (e: Exception) {
-                Log.e("Irfan get movie", e.message.orDefault("error"))
+                // do with exception
             }
         }
     }

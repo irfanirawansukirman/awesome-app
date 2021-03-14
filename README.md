@@ -2,7 +2,7 @@ Kita Movie for kitabisa.com reqruitment process.
 
 ## Installation
 
-- Open terminal + `git clone https://github.com/irfanirawansukirman/android-kita-movie.git`
+- Open terminal and write it `git clone https://github.com/irfanirawansukirman/android-kita-movie.git`
 
 - Open local.properties file and put your movie api key:
 ```
